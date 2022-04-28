@@ -1,14 +1,14 @@
 import styles from './CadMedico.module.css';
 
 import LinkButton from '../layout/LinkButton'
-import ProjectForm from '../project/ProjectForm'
+import DoctorForm from '../doctor/DoctorForm'
 
 function CadMedico(){
     return(
         <>
             <h1>Cadastrar Médico:</h1>
-            <LinkButton to="/pacientes" text="Voltar" customClass="yellow"/>
-            <ProjectForm/>
+            <LinkButton to="/medicos" text="Voltar" customClass="yellow"/>
+            <DoctorForm/>
         </>
     );
 }

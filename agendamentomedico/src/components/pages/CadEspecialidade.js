@@ -1,14 +1,14 @@
 import styles from './CadEspecialidade.module.css';
 
 import LinkButton from '../layout/LinkButton'
-import ProjectForm from '../project/ProjectForm'
+import SpecialtyForm from '../specialty/SpecialtyForm'
 
 function CadEspecialidade(){
     return(
         <>
             <h1>Nova Especialidade:</h1>
-            <LinkButton to="/pacientes" text="Voltar" customClass="yellow"/>
-            <ProjectForm/>
+            <LinkButton to="/especialidades" text="Voltar" customClass="yellow"/>
+            <SpecialtyForm/>
         </>
     );
 }
