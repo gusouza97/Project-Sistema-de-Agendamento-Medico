@@ -1,0 +1,45 @@
+.form_control{
+    display: flex;
+    flex-direction: column;
+}
+
+.customInput {
+    width: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
+    height: 2.5em;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid #CCC;
+}
+
+.customInput:hover{
+    border: 1px solid #000;
+}
+
+.customFile {
+    display: flex;
+    width: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
+    height: 22em;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.form_control input[type=file]::file-selector-button {
+    background-color: #FAFAFA;
+    background-image: url("../../img/icon-img-profile.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    width: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 1.5em;
+    height: 21em;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid #CCC;
+    text-indent: -999em;
+}
+

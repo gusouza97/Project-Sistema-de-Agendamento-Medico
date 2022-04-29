@@ -8,8 +8,6 @@ import Container from './components/layout/Container';
 import ContainerPrincipal from './components/layout/ContainerPrincipal';
 
 //Pages
-import Home from './components/pages/Home';
-import About from './components/pages/About';
 import ListEspecialidades from './components/pages/ListEspecialidades';
 import ListMedicos from './components/pages/ListMedicos';
 import ListPacientes from './components/pages/ListPacientes';
@@ -30,9 +28,7 @@ function App() {
         <Sidebar />
         <Container>
           <Routes>
-            <Route exact path='/' element={<Home />} />
-            <Route path='/sobre' element={<About />} />
-            <Route path='/dashboard' element={<Dashboard/>}/>
+            <Route exact path='/' element={<Dashboard/>}/>
             <Route path='/especialidades' element={<ListEspecialidades />} />
             <Route path='/medicos' element={<ListMedicos />} />
             <Route path='/pacientes' element={<ListPacientes />} />

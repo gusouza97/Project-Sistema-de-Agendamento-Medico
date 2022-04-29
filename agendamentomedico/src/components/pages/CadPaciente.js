@@ -1,6 +1,7 @@
 import styles from './CadPaciente.module.css';
 
 import LinkButton from '../layout/LinkButton'
+import Card from '../layout/Card'
 import PatientForm from '../patient/PatientForm'
 
 function CadPaciente(){
@@ -8,7 +9,9 @@ function CadPaciente(){
         <>
             <h1>Cadastrar Paciente:</h1>
             <LinkButton to="/pacientes" text="Voltar" customClass="yellow"/>
-            <PatientForm/>
+            <Card>
+                <PatientForm/>
+            </Card>
         </>
     );
 }
