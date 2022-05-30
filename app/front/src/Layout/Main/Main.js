@@ -1,9 +1,11 @@
 // Library
 import PropTypes from 'prop-types';
 
+import style from './Main.module.css';
+
 function Main({ children }) {
   return (
-    <main>
+    <main className={style.main}>
       {children}
     </main>
   );

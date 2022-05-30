@@ -11,9 +11,11 @@ nav {
 }
 
 nav h1 {
-    margin-left: 1.5em;
+    margin-left: 1em;
 }
 
-nav p {
-    margin-right: 2.5em;
+nav .icon {
+    cursor: pointer;
+    font-size: 38px;
+    margin-right: 1.5em;
 }
