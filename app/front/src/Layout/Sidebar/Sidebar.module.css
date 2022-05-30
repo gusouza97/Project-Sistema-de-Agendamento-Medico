@@ -1,0 +1,9 @@
+aside {
+    background-color: #334155;
+    color: #FFF;
+    display: flex;
+    height: 100vh;
+    position: fixed;
+    top: 75px;
+    width: 14em;
+}
