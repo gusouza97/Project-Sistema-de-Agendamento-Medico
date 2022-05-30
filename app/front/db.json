@@ -1,9 +1,89 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
+    "pacientes": [
+      { 
+        "id": 1, 
+        "convenioId": 1, 
+        "nome_completo": "Alberto Gomes", 
+        "CPF": "000.000.000-00", 
+        "nacionalidade": "brasileiro", 
+        "estado": "SP", 
+        "bairro": "Pinheiros", 
+        "cidade": "São Paulo", 
+        "endereco": "Rua Ana Rosa das Primaveras, 52", 
+        "telefone": "(11) 00000-0000", 
+        "email": "alberto@xxxx.com", 
+        "data_nascimento": "01/01/1990", 
+        "profissao": "Soldado", 
+        "photo_profile": "XXXXXXXXXX", 
+        "sexo": "Masculino"
+      }
     ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
+    "convenios": [
+      { 
+        "id": 1, 
+        "nome_convenio": "Bradesco Saúde" 
+      }
     ],
-    "profile": { "name": "typicode" }
-  }
+    "medicos": [
+      { 
+        "id": 1, 
+        "statusId": 1, 
+        "nome_completo": "João Carlos", 
+        "CRM": "XXXXXX", 
+        "email": "joao@email.com", 
+        "telefone": "(11) 00000-0000", 
+        "data_nascimento": "01/01/1978",
+        "photo_profile": "XXXXXXXX" 
+      }
+    ],
+    "consultas": [
+      { 
+        "id": 1, 
+        "medicoId": 1, 
+        "pacienteId": 1, 
+        "especialidadeId": 1, 
+        "statusConsultaId": 1, 
+        "detalhes": "some comment", 
+        "data": "12/06/2022"
+      }
+    ],
+    "anexos_consultas": [
+      { 
+        "id": 1, 
+        "consultaId": 1, 
+        "img": "XXXXXXXX" 
+      }
+    ],
+    "status_consultas": [
+      { 
+        "id": 1, 
+        "nome_status": "Agendada"
+      },
+      { 
+        "id": 2, 
+        "nome_status": "Cancelada"
+      },
+      { 
+        "id": 3, 
+        "nome_status": "Concluída"
+      }
+    ],
+    "medico_especialidade": [
+      { 
+        "medicoId": 1, 
+        "especialidadeId": 1
+      }
+    ],
+    "status_medico": [
+      { 
+        "id": 1, 
+        "nome_status": "Ativo"
+      }
+    ],
+    "especialidades": [
+      { 
+        "id": 1, 
+        "nome_especialidade": "Ortopedia"
+      }
+    ]
+}
