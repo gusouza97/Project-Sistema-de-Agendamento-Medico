@@ -1,9 +1,9 @@
-function CadMedicos() {
+function CadPacientes() {
   return (
     <>
-      CadMedicos
+      CadPacientes
     </>
   );
 }
 
-export default CadMedicos;
+export default CadPacientes;

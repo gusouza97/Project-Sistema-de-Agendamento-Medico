@@ -32,6 +32,7 @@ aside ul li a {
     padding-left: 20px;
     text-decoration: none;
     width: 100%;
+    transition: 0.3s ease all;
 }
 
 aside ul li a span {
