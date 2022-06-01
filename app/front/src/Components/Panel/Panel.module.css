@@ -1,0 +1,32 @@
+.panel {
+    background:#FFF;
+    border-radius:4px;
+    box-shadow:0px 24px 48px 0 rgba(0,0,0,0.16);
+    display: flex;
+    height:100%;
+    padding: 0.8em 0.8em;
+    width: 1200px;
+}
+
+.panel--color_red,
+.panel--color_green,
+.panel--color_blue,
+.panel--color_orange {
+    color: white;
+}
+
+.panel--color_red {
+    background-color: #EF4444;
+}
+
+.panel--color_green {
+    background-color: #059669;
+}
+
+.panel--color_blue {
+    background-color: #6366F1;
+}
+
+.panel--color_orange {
+    background-color: #D97706;
+}

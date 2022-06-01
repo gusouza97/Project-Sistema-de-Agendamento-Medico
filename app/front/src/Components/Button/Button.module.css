@@ -1,0 +1,30 @@
+.button {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button--color_green,
+.button--color_red,
+.button--color_blue,
+.button--color_orange
+{
+    color: white;
+}
+
+.button--color_green {
+    background-color: #059669;
+}
+
+.button--color_red {
+    background-color: #EF4444;
+}
+
+.button--color_blue {
+    background-color: #6366F1;
+}
+
+.button--color_orange {
+    background-color: #D97706;
+}

@@ -1,0 +1,14 @@
+.itemList {
+    display: flex;
+    width: 100%;
+}
+
+.itemList--color_green {
+    color: white;
+    background-color: #059669;
+}
+
+.itemList--color_red {
+    color: white;
+    background-color: #EF4444;
+}

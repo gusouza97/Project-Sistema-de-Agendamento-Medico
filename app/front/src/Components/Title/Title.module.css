@@ -1,0 +1,19 @@
+span {
+    font-weight: 600;
+}
+
+.title--color_dark {
+    color: #334155;
+}
+
+.title--color_white {
+    color: #FFF;
+}
+
+.title--fontsize_18px {
+    font-size: 18px;
+}
+
+.title--fontsize_46px {
+    font-size: 46px;
+}

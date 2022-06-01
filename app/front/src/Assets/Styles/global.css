@@ -1,0 +1,143 @@
+/* WRAPPER */
+
+.wrapper {
+    display: flex;
+    max-width: 1350px;
+    width: 100%;
+}
+
+/* FLEX CONFIG */
+
+.flex {
+    display: flex;
+}
+
+.flexDirection_row {
+    flex-direction: row;
+}
+
+.flexDirection_column {
+    flex-direction: column;
+}
+
+.justifyContent_center {
+    justify-content: center;
+}
+
+.justifyContent_spaceBetween {
+    justify-content: space-between;
+}
+
+.justifyContent_spaceEvenly {
+    justify-content: space-evenly;
+}
+
+.justifyContent_spaceAround {
+    justify-content: space-around;
+}
+
+.alignItems_center {
+    align-items: center;
+}
+
+/* WIDTH*/
+
+.width_100 {
+    width: 100%;
+}
+
+.width_90 {
+    width: 90%;
+}
+
+.width_80 {
+    width: 80%;
+}
+
+.width_70 {
+    width: 70%;
+}
+
+.width_65 {
+    width: 65%;
+}
+
+.width_60 {
+    width: 60%;
+}
+
+.width_50 {
+    width: 50%;
+}
+
+.width_40 {
+    width: 40%;
+}
+
+.width_30 {
+    width: 30%;
+}
+
+.width_22 {
+    width: 22%;
+}
+
+.width_20 {
+    width: 20%;
+}
+
+.width_10 {
+    width: 10%;
+}
+
+/* height */
+
+.height_50px {
+    height: 50px;
+}
+
+.height_100px {
+    height: 100px;
+}
+
+.height_120px {
+    height: 120px;
+}
+
+.height_150px {
+    height: 150px;
+}
+
+.height_200px {
+    height: 200px;
+}
+
+.height_250px {
+    height: 250px;
+}
+
+.height_300px {
+    height: 300px;
+}
+
+.height_350px {
+    height: 350px;
+}
+
+.height_400px {
+    height: 350px;
+}
+
+/* Margin */
+
+.mg-bottom_30px {
+    margin-bottom: 30px;
+}
+
+.mg-top_30px {
+    margin-top: 30px;
+}
+
+.mg-top_60px {
+    margin-top: 60px;
+}
