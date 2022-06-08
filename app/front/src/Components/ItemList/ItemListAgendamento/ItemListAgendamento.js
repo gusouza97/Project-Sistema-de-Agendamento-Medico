@@ -47,7 +47,7 @@ function ItemListAgendamento({ data }) {
       <div className="width_9 flex alignItems_center">
         <Row>
           <div className="width_40 flex">
-            <Link to={`agendamentos/${data.id}`}><Button color="button--color_green" type="View" /></Link>
+            <Link to={`/agendamentos/${data.id}`}><Button color="button--color_green" type="View" /></Link>
           </div>
           {status.id === 1 && (
           <div className="width_40 flex">

@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 
 // API
+import { Link } from 'react-router-dom';
 import getApi from '../../../Middleware/Api/getApi';
 
 // Components
@@ -110,7 +111,7 @@ function ListAgendamentos() {
         <Column width="width_100">
           <Row marginBottom="mb_20px">
             <Title text="Agendamentos" fontsize="title--fontsize_18px" />
-            <Button color="button--color_green" type="New" text="Novo Agendamento" />
+            <Link to="/agendamentos/cadastrar"><Button color="button--color_green" type="New" text="Novo Agendamento" /></Link>
           </Row>
           <Row marginBottom="mb_20px" width="width_98">
             <div className="width_43">

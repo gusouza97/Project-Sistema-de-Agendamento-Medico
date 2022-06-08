@@ -25,6 +25,12 @@
     color: #D97706;
 }
 
+/* LINKS */
+
+a {
+    text-decoration: none;
+}
+
 /* WEIGHT */
 .fontWeight_medium {
     font-weight: 600;
