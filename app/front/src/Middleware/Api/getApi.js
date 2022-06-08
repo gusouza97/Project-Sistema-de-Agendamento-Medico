@@ -77,10 +77,10 @@ export default {
       ),
     },
   ],
-  getConsultas: async () => [
+  getConsultas: async (uri, limit) => [
     {
       data: await basicFetch(
-        '/consultas',
+        `/consultas?_limit=${limit}${uri}`,
       ),
     },
   ],
@@ -116,6 +116,13 @@ export default {
     {
       data: await basicFetch(
         `/consultas?medicoId=${value}&_sort=data&_order=desc`,
+      ),
+    },
+  ],
+  getConsultasData: async (value) => [
+    {
+      data: await basicFetch(
+        `/consultas?data=${value}`,
       ),
     },
   ],

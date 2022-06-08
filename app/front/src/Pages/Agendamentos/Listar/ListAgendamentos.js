@@ -22,8 +22,42 @@ function ListAgendamentos() {
   const [statusConsulta, setStatusConsulta] = useState([]);
   const [pagination, setPagination] = useState(10);
 
+  // const [fetchURI, setFetchURI] = useState('');
+
+  const [filterSearch, setFilterSearch] = useState('');
+  const [filterStatus, setFilterStatus] = useState('');
+  const [filterDoctor, setFilterDoctor] = useState('');
+  const [filterDate, setFilterDate] = useState('');
+
+  // PERSONALIZAÇÃO DA URL DE BUSCA
+  const customURIFilterSearch = () => {
+    let URI = '';
+
+    if (filterDoctor) {
+      URI += `&medicoId=${filterDoctor}`;
+    }
+
+    if (filterStatus) {
+      URI += `&statusConsultaId=${filterStatus}`;
+    }
+
+    if (filterDate) {
+      URI += `&data=${filterDate}`;
+    }
+
+    if (filterSearch) {
+      URI += `&q=${filterSearch}`;
+    }
+
+    // setFetchURI(URI);
+    return URI;
+  };
+
+  // FETCH API DOS DADOS
   const loadAll = async () => {
-    const dataAgendamentos = await getApi.getConsultasWithLimit(pagination);
+    const url = customURIFilterSearch();
+
+    const dataAgendamentos = await getApi.getConsultas(url, pagination);
     setAgendamentos(dataAgendamentos[0].data);
 
     const dataStatusConsulta = await getApi.getStatusConsulta();
@@ -33,30 +67,42 @@ function ListAgendamentos() {
     setMedicos(dataMedicos[0].data);
   };
 
+  // INCREMENTANDO PAGINAÇÃO
   const incrementPagination = () => {
     const page = pagination + 10;
     setPagination(page);
-    loadAll();
   };
 
-  const handleSearchAgendamento = async (value) => {
-    const dataAgendamentos = await getApi.getConsultaSearch(value);
-    setAgendamentos(dataAgendamentos[0].data);
+  // HANDLES DE EVENTOS INPUTS
+  const handleSearchAgendamento = (value) => {
+    setFilterSearch(value);
+    setPagination(10);
+    customURIFilterSearch();
   };
 
-  const handleFilterStatusAgendamento = async (value) => {
-    const dataAgendamentos = await getApi.getConsultasStatusId(value);
-    setAgendamentos(dataAgendamentos[0].data);
+  const handleFilterStatusAgendamento = (value) => {
+    setFilterStatus(value);
+    setPagination(10);
+    customURIFilterSearch();
   };
 
-  const handleFilterMedicoIdAgendamento = async (value) => {
-    const dataAgendamentos = await getApi.getConsultasMedicoId(value);
-    setAgendamentos(dataAgendamentos[0].data);
+  const handleFilterMedicoIdAgendamento = (value) => {
+    setFilterDoctor(value);
+    setPagination(10);
+    customURIFilterSearch();
+  };
+
+  const handleFilterDateAgendamento = (value) => {
+    if (value) {
+      setFilterDate(value);
+      setPagination(10);
+      customURIFilterSearch();
+    }
   };
 
   useEffect(() => {
     loadAll();
-  }, []);
+  }, [filterSearch, filterStatus, filterDoctor, filterDate, pagination]);
 
   return (
     <Wrapper>
@@ -77,7 +123,7 @@ function ListAgendamentos() {
               <InputSelect name="Doutor" text="Doutor" datas={medicos} handleSelect={handleFilterMedicoIdAgendamento} />
             </div>
             <div className="width_13">
-              <InputCalendar name="Calendar" />
+              <InputCalendar name="Calendar" handleCalendar={handleFilterDateAgendamento} />
             </div>
           </Row>
           <div className="width_98 fontSize_14px fontColor_theme fontWeight_medium">
