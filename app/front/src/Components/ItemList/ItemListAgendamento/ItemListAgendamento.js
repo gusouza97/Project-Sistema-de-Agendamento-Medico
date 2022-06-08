@@ -1,5 +1,6 @@
 // Library
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // Styles
 import style from './ItemListAgendamento.module.css';
@@ -46,7 +47,7 @@ function ItemListAgendamento({ data }) {
       <div className="width_9 flex alignItems_center">
         <Row>
           <div className="width_40 flex">
-            <Button color="button--color_green" type="View" />
+            <Link to={`agendamentos/${data.id}`}><Button color="button--color_green" type="View" /></Link>
           </div>
           {status.id === 1 && (
           <div className="width_40 flex">

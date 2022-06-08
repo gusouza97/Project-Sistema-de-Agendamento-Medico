@@ -80,7 +80,7 @@ export default {
   getConsultas: async (uri, limit) => [
     {
       data: await basicFetch(
-        `/consultas?_limit=${limit}${uri}`,
+        `/consultas?_limit=${limit}${uri}&_sort=data&_order=desc`,
       ),
     },
   ],
