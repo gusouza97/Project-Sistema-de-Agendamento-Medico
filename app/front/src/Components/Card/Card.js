@@ -18,18 +18,18 @@ import { HiDocumentText } from 'react-icons/hi';
 import style from './Card.module.css';
 import '../../Assets/Styles/global.css';
 
-function Card({ color, name }) {
+function Card({ color, name, value }) {
   return (
-    <div className={`${style.card} ${style[color]} flex alignItems_center justifyContent_center`}>
+    <div className={`${style.card} ${style[color]} width_100`}>
       <div className="flex flexDirection_row alignItems_center justifyContent_spaceEvenly width_100">
         <div className={`${style.cardIcon} flex`}>
           {name === 'Pacientes' && (<FaUserAlt />)}
-          {name === 'Medicos' && (<FaUserNurse />)}
+          {name === 'Médicos' && (<FaUserNurse />)}
           {name === 'Agendamentos' && (<GiHealthNormal />)}
-          {name === 'Convenios' && (<HiDocumentText />)}
+          {name === 'Convênios' && (<HiDocumentText />)}
         </div>
         <div className="flex flexDirection_column alignItems_center">
-          <span className={style.cardNumber}>850</span>
+          <span className={style.cardNumber}>{value}</span>
           <span className={style.cardName}>{name}</span>
         </div>
       </div>
@@ -37,9 +37,16 @@ function Card({ color, name }) {
   );
 }
 
+Card.defaultProps = {
+  color: '',
+  name: '',
+  value: 0,
+};
+
 Card.propTypes = {
-  color: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  color: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.number,
 };
 
 export default Card;

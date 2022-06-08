@@ -28,10 +28,38 @@ export default {
       ),
     },
   ],
+  getMedicosWithLimit: async (limit) => [
+    {
+      data: await basicFetch(
+        `/medicos/?_limit=${limit}&_sort=nome_completo&_order=asc`,
+      ),
+    },
+  ],
   getMedicoId: async (id) => [
     {
       data: await basicFetch(
         `/medicos/${id}`,
+      ),
+    },
+  ],
+  getMedicoSearch: async (string) => [
+    {
+      data: await basicFetch(
+        `/medicos?q=${string}`,
+      ),
+    },
+  ],
+  getMedicoUltimoAtendimento: async (medicoId) => [
+    {
+      data: await basicFetch(
+        `/consultas?medicoId=${medicoId}&_limit=1&_sort=data&_order=desc`,
+      ),
+    },
+  ],
+  getMedicosStatusId: async (value) => [
+    {
+      data: await basicFetch(
+        `/medicos?statusId=${value}&_sort=nome_completo`,
       ),
     },
   ],
@@ -56,10 +84,38 @@ export default {
       ),
     },
   ],
+  getConsultasWithLimit: async (limit) => [
+    {
+      data: await basicFetch(
+        `/consultas/?_limit=${limit}&_sort=data&_order=desc`,
+      ),
+    },
+  ],
   getConsultaId: async (id) => [
     {
       data: await basicFetch(
         `/consultas/${id}`,
+      ),
+    },
+  ],
+  getConsultaSearch: async (string) => [
+    {
+      data: await basicFetch(
+        `/consultas?q=${string}`,
+      ),
+    },
+  ],
+  getConsultasStatusId: async (value) => [
+    {
+      data: await basicFetch(
+        `/consultas?statusConsultaId=${value}&_sort=data&_order=desc`,
+      ),
+    },
+  ],
+  getConsultasMedicoId: async (value) => [
+    {
+      data: await basicFetch(
+        `/consultas?medicoId=${value}&_sort=data&_order=desc`,
       ),
     },
   ],

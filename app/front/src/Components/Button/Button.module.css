@@ -1,8 +1,22 @@
+button {
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    margin: 0px 3px;
+}
+
 .button {
     align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 9px 9px;
+}
+
+.button span {
+    margin-left: 4px;
 }
 
 .button--color_green,

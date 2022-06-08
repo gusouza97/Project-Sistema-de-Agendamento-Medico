@@ -4,8 +4,8 @@
     box-shadow:0px 24px 48px 0 rgba(0,0,0,0.16);
     display: flex;
     height:100%;
+    margin-top: 20px;
     padding: 0.8em 0.8em;
-    width: 1200px;
 }
 
 .panel--color_red,
@@ -29,4 +29,116 @@
 
 .panel--color_orange {
     background-color: #D97706;
+}
+
+/* width */
+
+.ExtraLarge {
+    width: 1350px;
+}
+
+.Large {
+    width: 862px;
+}
+
+.Medium {
+    width: 610px;
+}
+
+.Small {
+    width: 400px;
+}
+
+.ExtraSmall {
+    width: 310px;
+}
+
+/* Height */
+
+.height_100 {
+    height: 100px;
+}
+
+.height_120 {
+    height: 120px;
+}
+
+.height_150 {
+    height: 150px;
+}
+
+.height_200 {
+    height: 200px;
+}
+
+.height_250 {
+    height: 250px;
+}
+
+.height_300 {
+    height: 300px;
+}
+
+.height_350 {
+    height: 350px;
+}
+
+.height_400 {
+    height: 400px;
+}
+
+.height_450 {
+    height: 450px;
+}
+
+.height_500 {
+    height: 500px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1600px) {
+    .panel {
+        margin-top: 20px;
+    }
+
+    .ExtraLarge {
+        width: 980px;
+    }
+
+    .Large {
+        width: 980px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .ExtraLarge {
+        width: 720px;
+    }
+
+    .Large {
+        width: 720px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .ExtraLarge {
+        width: 380px;
+    }
+
+    .Large {
+        width: 380px;
+    }
+
+    .Medium {
+        width: 380px;
+    }
+
+    .Small {
+        width: 380px;
+    }
+
+    .ExtraSmall {
+        width: 380px;
+    }
 }

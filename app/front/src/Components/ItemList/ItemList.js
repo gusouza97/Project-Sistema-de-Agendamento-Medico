@@ -13,7 +13,7 @@ function ItemList({ datas, bgColor }) {
 }
 
 ItemList.propTypes = {
-  datas: PropTypes.objectOf(PropTypes.object()).isRequired,
+  datas: PropTypes.arrayOf(PropTypes.array()).isRequired,
   bgColor: PropTypes.string.isRequired,
 };
 
