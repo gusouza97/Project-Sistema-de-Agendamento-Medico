@@ -1,9 +1,10 @@
 // Library
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // API
-import { Link } from 'react-router-dom';
 import getApi from '../../../Middleware/Api/getApi';
+import patchApi from '../../../Middleware/Api/patchApi';
 
 // Components
 import ItemListAgendamento from '../../../Components/ItemList/ItemListAgendamento/ItemListAgendamento';
@@ -22,8 +23,6 @@ function ListAgendamentos() {
   const [medicos, setMedicos] = useState([]);
   const [statusConsulta, setStatusConsulta] = useState([]);
   const [pagination, setPagination] = useState(10);
-
-  // const [fetchURI, setFetchURI] = useState('');
 
   const [filterSearch, setFilterSearch] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
@@ -101,6 +100,12 @@ function ListAgendamentos() {
     }
   };
 
+  // FUNÇÃO DE CANCELAMENTO AGENDAMENTO
+  const handleCancelAgendamento = async (id) => {
+    await patchApi.patchAgendamentos(id);
+    loadAll();
+  };
+
   useEffect(() => {
     loadAll();
   }, [filterSearch, filterStatus, filterDoctor, filterDate, pagination]);
@@ -143,7 +148,9 @@ function ListAgendamentos() {
       <ul>
         {
           agendamentos.map((value, index) => (
-            <li key={value.id}><ItemListAgendamento data={agendamentos[index]} /></li>
+            <li key={value.id}>
+              <ItemListAgendamento data={agendamentos[index]} handle={handleCancelAgendamento} />
+            </li>
           ))
         }
       </ul>

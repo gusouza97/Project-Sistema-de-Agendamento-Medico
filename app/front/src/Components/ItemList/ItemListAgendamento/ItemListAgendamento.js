@@ -14,7 +14,7 @@ import getApi from '../../../Middleware/Api/getApi';
 import Button from '../../Button/Button';
 import Row from '../../../Layout/Row/Row';
 
-function ItemListAgendamento({ data }) {
+function ItemListAgendamento({ data, handle }) {
   const [paciente, setPaciente] = useState([]);
   const [status, setStatus] = useState([]);
   const [medico, setMedico] = useState([]);
@@ -51,7 +51,7 @@ function ItemListAgendamento({ data }) {
           </div>
           {status.id === 1 && (
           <div className="width_40 flex">
-            <Button color="button--color_red" type="Delete" />
+            <Button color="button--color_red" type="Delete" data={data} handle={handle} />
           </div>
           )}
         </Row>
