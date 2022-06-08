@@ -18,6 +18,16 @@ function ItemListAgendamento({ data, handle }) {
   const [paciente, setPaciente] = useState([]);
   const [status, setStatus] = useState([]);
   const [medico, setMedico] = useState([]);
+  const [dateFormatBrazil, setDateFormatBrazil] = useState();
+
+  const convertDateFormatBrazil = () => {
+    const arrDateFormat = data.data.split('-');
+    const year = arrDateFormat[0];
+    const day = arrDateFormat[2];
+    const month = arrDateFormat[1];
+
+    setDateFormatBrazil(`${day}/${month}/${year}`);
+  };
 
   useEffect(() => {
     const loadAll = async () => {
@@ -29,6 +39,8 @@ function ItemListAgendamento({ data, handle }) {
 
       const medicoData = await getApi.getMedicoId(data.medicoId);
       setMedico(medicoData[0].data);
+
+      convertDateFormatBrazil();
     };
 
     loadAll();
@@ -41,7 +53,7 @@ function ItemListAgendamento({ data, handle }) {
       {status.id === 1 && (<div className="width_16 fontColor_orange">{status.nome_status}</div>)}
       {status.id === 2 && (<div className="width_16 fontColor_red">{status.nome_status}</div>)}
       {status.id === 3 && (<div className="width_16 fontColor_green">{status.nome_status}</div>)}
-      <div className="width_9">{data.data}</div>
+      <div className="width_9">{dateFormatBrazil}</div>
       <div className="width_9">{data.horario}</div>
       <div className="width_16">{medico.nome_completo}</div>
       <div className="width_9 flex alignItems_center">

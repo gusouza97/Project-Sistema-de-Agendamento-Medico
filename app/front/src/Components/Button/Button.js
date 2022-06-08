@@ -21,10 +21,10 @@ import { RiDeleteBack2Line, RiArrowGoBackFill } from 'react-icons/ri';
 import style from './Button.module.css';
 
 function Button({
-  color, type, text, handle,
+  color, type, text, handle, data,
 }) {
   return (
-    <button className={`${style.button} ${style[color]}`} type="button" onClick={handle}>
+    <button className={`${style.button} ${style[color]}`} type="button" onClick={() => { if (data) handle(data.id); else handle(); }}>
       {type === 'New' && (<FaRegEdit />)}
       {type === 'Post' && (<AiOutlineCheck />)}
       {type === 'Back' && (<RiArrowGoBackFill />)}
