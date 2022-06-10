@@ -109,7 +109,7 @@
       "medicoId": 1,
       "pacienteId": 1,
       "especialidadeId": 1,
-      "statusConsultaId": 2,
+      "statusConsultaId": 1,
       "detalhes": "some comment1",
       "data": "2022-04-05",
       "horario": "00:00"
@@ -139,7 +139,7 @@
       "medicoId": 2,
       "pacienteId": 1,
       "especialidadeId": 1,
-      "statusConsultaId": 2,
+      "statusConsultaId": 1,
       "detalhes": "some comment4",
       "data": "2022-04-05",
       "horario": "00:00"
@@ -149,7 +149,7 @@
       "medicoId": 4,
       "pacienteId": 2,
       "especialidadeId": 1,
-      "statusConsultaId": 3,
+      "statusConsultaId": 1,
       "detalhes": "some comment5",
       "data": "2022-04-07",
       "horario": "00:00"
@@ -159,7 +159,7 @@
       "medicoId": 1,
       "pacienteId": 2,
       "especialidadeId": 1,
-      "statusConsultaId": 3,
+      "statusConsultaId": 1,
       "detalhes": "some comment6",
       "data": "2022-04-08",
       "horario": "00:00"
@@ -239,7 +239,7 @@
       "medicoId": 1,
       "pacienteId": 1,
       "especialidadeId": 1,
-      "statusConsultaId": 2,
+      "statusConsultaId": 1,
       "detalhes": "some comment4",
       "data": "2022-04-05",
       "horario": "00:00"
@@ -249,7 +249,7 @@
       "medicoId": 1,
       "pacienteId": 1,
       "especialidadeId": 1,
-      "statusConsultaId": 3,
+      "statusConsultaId": 1,
       "detalhes": "some comment5",
       "data": "2022-04-07",
       "horario": "00:00"
@@ -259,7 +259,7 @@
       "medicoId": 1,
       "pacienteId": 1,
       "especialidadeId": 1,
-      "statusConsultaId": 3,
+      "statusConsultaId": 1,
       "detalhes": "some comment6",
       "data": "2022-04-08",
       "horario": "00:00"
@@ -279,7 +279,7 @@
       "medicoId": 1,
       "pacienteId": 1,
       "especialidadeId": 1,
-      "statusConsultaId": 1,
+      "statusConsultaId": 2,
       "detalhes": "some comment8",
       "data": "2022-04-09",
       "horario": "00:00"
@@ -289,7 +289,7 @@
       "medicoId": 1,
       "pacienteId": 1,
       "especialidadeId": 1,
-      "statusConsultaId": 1,
+      "statusConsultaId": 2,
       "detalhes": "some comment9",
       "data": "2022-04-09",
       "horario": "00:00"
@@ -369,7 +369,7 @@
       "medicoId": 1,
       "pacienteId": 1,
       "especialidadeId": 1,
-      "statusConsultaId": 1,
+      "statusConsultaId": 2,
       "detalhes": "some comment7",
       "data": "2022-04-09",
       "horario": "00:00"
@@ -379,7 +379,7 @@
       "medicoId": 1,
       "pacienteId": 1,
       "especialidadeId": 1,
-      "statusConsultaId": 1,
+      "statusConsultaId": 2,
       "detalhes": "some comment8",
       "data": "2022-04-09",
       "horario": "00:00"
@@ -389,7 +389,7 @@
       "medicoId": 1,
       "pacienteId": 1,
       "especialidadeId": 1,
-      "statusConsultaId": 1,
+      "statusConsultaId": 2,
       "detalhes": "some comment9",
       "data": "2022-04-09",
       "horario": "00:00"
@@ -469,7 +469,7 @@
       "medicoId": 1,
       "pacienteId": 1,
       "especialidadeId": 1,
-      "statusConsultaId": 1,
+      "statusConsultaId": 2,
       "detalhes": "some comment7",
       "data": "2022-04-09",
       "horario": "00:00"
@@ -479,7 +479,7 @@
       "medicoId": 1,
       "pacienteId": 1,
       "especialidadeId": 1,
-      "statusConsultaId": 1,
+      "statusConsultaId": 2,
       "detalhes": "some comment8",
       "data": "2022-04-09",
       "horario": "00:00"
@@ -489,7 +489,7 @@
       "medicoId": 1,
       "pacienteId": 1,
       "especialidadeId": 1,
-      "statusConsultaId": 1,
+      "statusConsultaId": 2,
       "detalhes": "some comment9",
       "data": "2022-04-09",
       "horario": "00:00"

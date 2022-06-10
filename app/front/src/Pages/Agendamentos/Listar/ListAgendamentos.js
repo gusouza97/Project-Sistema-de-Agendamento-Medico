@@ -1,5 +1,5 @@
 // Library
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // API
@@ -23,6 +23,7 @@ function ListAgendamentos() {
   const [medicos, setMedicos] = useState([]);
   const [statusConsulta, setStatusConsulta] = useState([]);
   const [pagination, setPagination] = useState(10);
+  const [cancel, setCancel] = useState(false);
 
   const [filterSearch, setFilterSearch] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
@@ -101,14 +102,15 @@ function ListAgendamentos() {
   };
 
   // FUNÇÃO DE CANCELAMENTO AGENDAMENTO
-  const handleCancelAgendamento = async (id) => {
+  const handleCancelAgendamento = useCallback(async (id) => {
     await patchApi.patchAgendamentos(id);
-    loadAll();
-  };
+    setCancel(true);
+    console.log(cancel);
+  });
 
   useEffect(() => {
     loadAll();
-  }, [filterSearch, filterStatus, filterDoctor, filterDate, pagination]);
+  }, [filterSearch, filterStatus, filterDoctor, filterDate, pagination, cancel]);
 
   return (
     <Wrapper>
@@ -153,6 +155,7 @@ function ListAgendamentos() {
             </li>
           ))
         }
+
       </ul>
       ) }
           <Row marginBottom="mb_10px" />
