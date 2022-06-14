@@ -85,7 +85,7 @@ function ListAgendamentos() {
       <Panel width="ExtraLarge">
         <Column width="width_100">
           <Row marginBottom="mb_20px">
-            <Title text="Agendamentos" fontsize="title--fontsize_18px" />
+            <Title text="AGENDAMENTOS" color="title--color_dark" fontsize="title--fontsize_18px" />
             <Link to="/agendamentos/cadastrar"><Button color="button--color_green" type="New" text="Novo Agendamento" /></Link>
           </Row>
           <Row marginBottom="mb_20px" width="width_98">
