@@ -1,0 +1,14 @@
+.agendamentoTitle_header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agendamentoInputs_container {
+    width: 850px;
+}
+
+.agendamentoPhotoProfile_container {
+    width: 450px;
+}

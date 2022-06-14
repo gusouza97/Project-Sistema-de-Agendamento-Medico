@@ -21,15 +21,15 @@ function ListAgendamentos() {
   const { agendamentos, medicos, statusConsulta } = useAuth();
 
   const [pagination, setPagination] = useState(10);
-  const [filterSearch, setFilterSearch] = useState('');
+  const [fiSearch, setFilterSearch] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
   const [filterDoctor, setFilterDoctor] = useState('');
   const [filterDate, setFilterDate] = useState('');
 
   // INCREMENTANDO PAGINAÇÃO
   const handleFiltersMain = () => {
-    agendamentos.getAgendamentosPagination(
-      filterSearch,
+    agendamentos.getAgendamentosWithFilter(
+      fiSearch,
       filterStatus,
       filterDoctor,
       filterDate,
@@ -72,7 +72,7 @@ function ListAgendamentos() {
 
   useEffect(() => {
     handleFiltersMain();
-  }, [filterSearch, filterStatus, filterDoctor, filterDate, pagination]);
+  }, [fiSearch, filterStatus, filterDoctor, filterDate, pagination]);
 
   useEffect(() => {
     handleFiltersMain();

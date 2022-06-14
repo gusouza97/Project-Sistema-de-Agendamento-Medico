@@ -16,8 +16,8 @@ export function AuthProvider({ children }) {
 
   // FETCH API DOS DADOS
   // GETS
-  // Get Agendamentos com Paginação
-  const getAgendamentosPagination = async (fiSearch, fiStatus, fiDoctor, fiDate, page) => {
+  // Get Agendamentos com Filter
+  const getAgendamentosWithFilter = async (fiSearch, fiStatus, fiDoctor, fiDate, page) => {
     let url = '';
 
     if (fiDoctor) {
@@ -60,7 +60,7 @@ export function AuthProvider({ children }) {
 
   // VALUES
   const agendamentos = {
-    getAgendamentosPagination,
+    getAgendamentosWithFilter,
     dataAgendamentos,
     patchCancelAgendamento,
     setDataAgendamentos,
@@ -79,7 +79,10 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ agendamentos, medicos, statusConsulta }}>
+    <AuthContext.Provider value={{
+      agendamentos, medicos, statusConsulta,
+    }}
+    >
       {children}
     </AuthContext.Provider>
   );

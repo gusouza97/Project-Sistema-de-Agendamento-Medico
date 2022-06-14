@@ -14,6 +14,13 @@ export default {
       ),
     },
   ],
+  getPacientesWithFilterSearch: async (text) => [
+    {
+      data: await basicFetch(
+        `/pacientes/?q=${text}`,
+      ),
+    },
+  ],
   getPacienteId: async (id) => [
     {
       data: await basicFetch(

@@ -339,7 +339,7 @@
       "medicoId": 1,
       "pacienteId": 1,
       "especialidadeId": 1,
-      "statusConsultaId": 1,
+      "statusConsultaId": 2,
       "detalhes": "some comment4",
       "data": "2022-04-05",
       "horario": "00:00"
