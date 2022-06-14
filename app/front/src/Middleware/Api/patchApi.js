@@ -13,7 +13,7 @@ const basicFetch = async (endpoint) => {
     ),
   })
     .then((res) => res.json())
-    .then((res) => console.log(`Modificado com sucesso! ${res}`))
+    .then((res) => res)
     .catch((err) => console.log(`Houve um erro! ${err}`));
 };
 

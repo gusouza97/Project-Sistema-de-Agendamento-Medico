@@ -1,10 +1,6 @@
 // Library
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
-// API
-import getApi from '../../../Middleware/Api/getApi';
-import patchApi from '../../../Middleware/Api/patchApi';
 
 // Components
 import ItemListAgendamento from '../../../Components/ItemList/ItemListAgendamento/ItemListAgendamento';
@@ -18,57 +14,29 @@ import InputSearch from '../../../Components/InputSearch/InputSearch';
 import InputSelect from '../../../Components/InputSelect/InputSelect';
 import InputCalendar from '../../../Components/InputCalendar/InputCalendar';
 
-function ListAgendamentos() {
-  const [agendamentos, setAgendamentos] = useState([]);
-  const [medicos, setMedicos] = useState([]);
-  const [statusConsulta, setStatusConsulta] = useState([]);
-  const [pagination, setPagination] = useState(10);
-  const [cancel, setCancel] = useState(false);
+// Context
+import { useAuth } from '../../../Services/Providers/AuthContext';
 
+function ListAgendamentos() {
+  const { agendamentos, medicos, statusConsulta } = useAuth();
+
+  const [pagination, setPagination] = useState(10);
   const [filterSearch, setFilterSearch] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
   const [filterDoctor, setFilterDoctor] = useState('');
   const [filterDate, setFilterDate] = useState('');
 
-  // PERSONALIZAÇÃO DA URL DE BUSCA
-  const customURIFilterSearch = () => {
-    let URI = '';
-
-    if (filterDoctor) {
-      URI += `&medicoId=${filterDoctor}`;
-    }
-
-    if (filterStatus) {
-      URI += `&statusConsultaId=${filterStatus}`;
-    }
-
-    if (filterDate) {
-      URI += `&data=${filterDate}`;
-    }
-
-    if (filterSearch) {
-      URI += `&q=${filterSearch}`;
-    }
-
-    // setFetchURI(URI);
-    return URI;
-  };
-
-  // FETCH API DOS DADOS
-  const loadAll = async () => {
-    const url = customURIFilterSearch();
-
-    const dataAgendamentos = await getApi.getConsultas(url, pagination);
-    setAgendamentos(dataAgendamentos[0].data);
-
-    const dataStatusConsulta = await getApi.getStatusConsulta();
-    setStatusConsulta(dataStatusConsulta[0].data);
-
-    const dataMedicos = await getApi.getMedicos();
-    setMedicos(dataMedicos[0].data);
-  };
-
   // INCREMENTANDO PAGINAÇÃO
+  const handleFiltersMain = () => {
+    agendamentos.getAgendamentosPagination(
+      filterSearch,
+      filterStatus,
+      filterDoctor,
+      filterDate,
+      pagination,
+    );
+  };
+
   const incrementPagination = () => {
     const page = pagination + 10;
     setPagination(page);
@@ -78,39 +46,39 @@ function ListAgendamentos() {
   const handleSearchAgendamento = (value) => {
     setFilterSearch(value);
     setPagination(10);
-    customURIFilterSearch();
   };
 
   const handleFilterStatusAgendamento = (value) => {
     setFilterStatus(value);
     setPagination(10);
-    customURIFilterSearch();
   };
 
   const handleFilterMedicoIdAgendamento = (value) => {
     setFilterDoctor(value);
     setPagination(10);
-    customURIFilterSearch();
   };
 
   const handleFilterDateAgendamento = (value) => {
     if (value) {
       setFilterDate(value);
       setPagination(10);
-      customURIFilterSearch();
     }
   };
 
-  // FUNÇÃO DE CANCELAMENTO AGENDAMENTO
-  const handleCancelAgendamento = useCallback(async (id) => {
-    await patchApi.patchAgendamentos(id);
-    setCancel(true);
-    console.log(cancel);
-  });
+  const handleCancelAgendamento = (id) => {
+    agendamentos.patchCancelAgendamento(id);
+    window.location.reload();
+  };
 
   useEffect(() => {
-    loadAll();
-  }, [filterSearch, filterStatus, filterDoctor, filterDate, pagination, cancel]);
+    handleFiltersMain();
+  }, [filterSearch, filterStatus, filterDoctor, filterDate, pagination]);
+
+  useEffect(() => {
+    handleFiltersMain();
+    medicos.getMedicos();
+    statusConsulta.getStatusConsulta();
+  }, []);
 
   return (
     <Wrapper>
@@ -125,10 +93,10 @@ function ListAgendamentos() {
               <InputSearch handleSearch={handleSearchAgendamento} />
             </div>
             <div className="width_13">
-              <InputSelect name="Status" text="Status" datas={statusConsulta} handleSelect={handleFilterStatusAgendamento} />
+              <InputSelect name="Status" text="Status" datas={statusConsulta.dataStatusConsulta} handleSelect={handleFilterStatusAgendamento} />
             </div>
             <div className="width_23">
-              <InputSelect name="Doutor" text="Doutor" datas={medicos} handleSelect={handleFilterMedicoIdAgendamento} />
+              <InputSelect name="Doutor" text="Doutor" datas={medicos.dataMedicos} handleSelect={handleFilterMedicoIdAgendamento} />
             </div>
             <div className="width_13">
               <InputCalendar name="Calendar" handleCalendar={handleFilterDateAgendamento} />
@@ -149,11 +117,14 @@ function ListAgendamentos() {
       && (
       <ul>
         {
-          agendamentos.map((value, index) => (
-            <li key={value.id}>
-              <ItemListAgendamento data={agendamentos[index]} handle={handleCancelAgendamento} />
-            </li>
-          ))
+     agendamentos.dataAgendamentos.map((value, index) => (
+       <li key={value.id}>
+         <ItemListAgendamento
+           data={agendamentos.dataAgendamentos[index]}
+           handle={handleCancelAgendamento}
+         />
+       </li>
+     ))
         }
 
       </ul>
