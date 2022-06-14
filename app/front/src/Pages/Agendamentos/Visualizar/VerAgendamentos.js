@@ -34,19 +34,23 @@ function VerAgendamentos() {
       <Panel width="ExtraLarge">
         <Column>
           <Row>
-            <div className={style.agendamentoTitle_header}>
+            <div className={style.header_agendamentoTitle}>
               <Title text={`AGENDAMENTO Nº ${agendamento.id}`} />
-              <Button text="teste" />
+              <div className={style.container_buttons}>
+                <Button color="button--color_orange" type="Edit" handle="" />
+                <Button color="button--color_red" type="Delete" handle="" />
+                <Button color="button--color_blue" type="Back" handle="" />
+              </div>
             </div>
           </Row>
           <Row>
             <Column>
-              <div className={style.agendamentoInputs_container}>
+              <div className={style.container_agendamentoInputs}>
                 <p>Coluna de Inputs</p>
               </div>
             </Column>
             <Column>
-              <div className={style.agendamentoPhotoProfile_container}>
+              <div className={style.container_agendamentosPhotoProfile}>
                 <p>Coluna de Inputs</p>
               </div>
             </Column>
