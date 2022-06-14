@@ -22,6 +22,7 @@ button {
 .button--color_green,
 .button--color_red,
 .button--color_blue,
+.button--color-grey,
 .button--color_orange
 {
     color: white;
@@ -37,6 +38,10 @@ button {
 
 .button--color_blue {
     background-color: #6366F1;
+}
+
+.button--color-grey {
+    background-color: #A8A29E;
 }
 
 .button--color_orange {

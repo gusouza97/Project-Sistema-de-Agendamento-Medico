@@ -9,7 +9,7 @@ function InputSearch({ handleSearch }) {
   return (
     <div className={style.InputSearch}>
       <input type="search" placeholder="Pesquisar..." onChange={(e) => { handleSearch(e.target.value); }} />
-      <Button color="button--color_blue" type="Search" />
+      <Button color="button--color-grey" type="Search" />
     </div>
   );
 }
