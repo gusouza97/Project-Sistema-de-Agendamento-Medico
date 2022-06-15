@@ -1,0 +1,24 @@
+.ImgArea {
+    align-items: center;
+    border: 1px solid #ccc;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    font-size: 15em;
+    flex-direction: column;
+    height: 350px;
+    width: 100%;
+}
+
+.ImgArea input {
+    background-image: url("../../Assets/Images/iconUpload.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: transparent;
+    height: 100%;
+    width: 100%;
+} 
+
+.ImgArea input::-webkit-file-upload-button {
+    visibility: hidden;
+}

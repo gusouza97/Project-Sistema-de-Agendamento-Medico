@@ -16,6 +16,7 @@ import Row from '../../../Layout/Row/Row';
 import Title from '../../../Components/Title/Title';
 import Button from '../../../Components/Button/Button';
 import Input from '../../../Components/Input/Input';
+import InputFile from '../../../Components/InputFile/InputFile';
 
 function VerAgendamentos() {
   const params = useParams();
@@ -60,59 +61,60 @@ function VerAgendamentos() {
                   <Row>
                     <Column>
                       <Title text="Nº" />
-                      <Input placeholder="Registro" type="text" value={agendamento.id} disabled={disabled} />
+                      <Input placeholder="Registro" type="text" value={agendamento.id} size="Extra-Small" disabled={disabled} />
                     </Column>
                     <Column>
                       <Title text="Data" />
-                      <Input placeholder="Data" type="date" value={agendamento.date} disabled={disabled} />
+                      <Input placeholder="Data" type="date" value={agendamento.date} size="Small" disabled={disabled} />
                     </Column>
                     <Column>
                       <Title text="Horário" />
-                      <Input placeholder="Horário" type="time" value={agendamento.horario} disabled={disabled} />
+                      <Input placeholder="Horário" type="time" value={agendamento.horario} size="Small" disabled={disabled} />
                     </Column>
                     <Column>
                       <Title text="Status" />
-                      <Input placeholder="Status Consulta" type="text" value={agendamento.statusConsultaId} disabled={disabled} />
+                      <Input placeholder="Status Consulta" type="text" value={agendamento.statusConsultaId} size="Middle" disabled={disabled} />
                     </Column>
                     <Column>
                       <Title text="Especialidade" />
-                      <Input placeholder="Especialidade" type="text" value={agendamento.especialidadeId} disabled={disabled} />
+                      <Input placeholder="Especialidade" type="text" value={agendamento.especialidadeId} size="Large" disabled={disabled} />
                     </Column>
                     <Column>
                       <Title text="Médico" />
-                      <Input placeholder="Médico" type="text" value={agendamento.medicoId} disabled={disabled} />
+                      <Input placeholder="Médico" type="text" value={agendamento.medicoId} size="Middle" disabled={disabled} />
                     </Column>
                     <Column>
                       <Title text="CRM" />
-                      <Input placeholder="CRM" type="text" value="CRM" disabled={disabled} />
+                      <Input placeholder="CRM" type="text" value="CRM" size="Middle" disabled={disabled} />
                     </Column>
                     <Column>
                       <Title text="Nome do Paciente" />
-                      <Input placeholder="Nome do Paciente" type="text" value={agendamento.pacienteId} disabled={disabled} />
+                      <Input placeholder="Nome do Paciente" type="text" value={agendamento.pacienteId} size="Extra-Large" disabled={disabled} />
                     </Column>
                     <Column>
                       <Title text="CPF" />
-                      <Input placeholder="CPF" type="text" value="000.000.000-00" disabled={disabled} />
+                      <Input placeholder="CPF" type="text" value="000.000.000-00" size="Middle" disabled={disabled} />
                     </Column>
                     <Column>
                       <Title text="Idade" />
-                      <Input placeholder="Idade" type="text" value="Idade" disabled={disabled} />
+                      <Input placeholder="Idade" type="text" value="Idade" size="Small" disabled={disabled} />
                     </Column>
                     <Column>
                       <Title text="Sexo" />
-                      <Input placeholder="Sexo" type="text" value="Sexo" disabled={disabled} />
+                      <Input placeholder="Sexo" type="text" value="Sexo" size="Middle" disabled={disabled} />
                     </Column>
                     <Column>
                       <Title text="Convênio" />
-                      <Input placeholder="Convênio" type="text" value="Convênio" disabled={disabled} />
+                      <Input placeholder="Convênio" type="text" value="Convênio" size="Middle" disabled={disabled} />
                     </Column>
-
                   </Row>
                 </div>
               </Column>
               <Column>
                 <div className={style.container_agendamentosPhotoProfile}>
-                  <p>Coluna de Inputs</p>
+                  <div>
+                    <InputFile />
+                  </div>
                 </div>
               </Column>
             </Row>

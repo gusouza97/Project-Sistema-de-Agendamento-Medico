@@ -2,11 +2,10 @@
 import style from './Input.module.css';
 
 function Input({
-  placeholder, type, value, disabled,
+  placeholder, type, value, disabled, size,
 }) {
   return (
-    <div className={style.Input}>
-
+    <div className={`${style.Input} ${style[size]}`}>
       {disabled === true && (
         <input
           type={type}
@@ -21,6 +20,7 @@ function Input({
         type={type}
         placeholder={placeholder}
         value={value}
+        className={`${style[size]}`}
       />
       )}
 
