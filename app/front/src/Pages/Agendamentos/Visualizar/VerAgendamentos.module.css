@@ -1,8 +1,13 @@
+.container_main {
+    margin: 1em;
+}
+
 .header_agendamentoTitle {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 2em;
 }
 
 .container_buttons {
@@ -12,9 +17,11 @@
 }
 
 .container_agendamentoInputs {
-    width: 850px;
+    width: 820px;
+    padding: 1em;
 }
 
 .container_agendamentosPhotoProfile {
-    width: 450px;
+    width: 380px;
+    padding: 1em;
 }
