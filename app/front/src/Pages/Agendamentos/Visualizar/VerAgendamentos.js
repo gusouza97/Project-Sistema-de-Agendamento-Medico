@@ -1,6 +1,6 @@
 // Library
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 // Styles
 import style from './VerAgendamentos.module.css';
@@ -66,7 +66,7 @@ function VerAgendamentos() {
                   <div className={style.container_buttons}>
                     <Button color="button--color_orange" type="Edit" handle={handleEdit} />
                     <Button color="button--color_red" type="Delete" />
-                    <Button color="button--color_blue" type="Back" />
+                    <Link to="../agendamentos"><Button color="button--color_blue" type="Back" /></Link>
                   </div>
                 </div>
               </Row>
@@ -133,8 +133,6 @@ function VerAgendamentos() {
                   </div>
                 </Column>
               </Row>
-              <p>{agendamentos.dataAgendamentoId.id}</p>
-              <p>{agendamentos.dataAgendamentoId.detalhes}</p>
             </Column>
           </form>
         </div>
