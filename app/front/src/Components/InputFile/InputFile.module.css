@@ -10,15 +10,23 @@
     width: 100%;
 }
 
-.ImgArea input {
-    background-image: url("../../Assets/Images/iconUpload.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    color: transparent;
-    height: 100%;
+.ImgArea .inputfile {
+	height: 100%;
     width: 100%;
-} 
-
-.ImgArea input::-webkit-file-upload-button {
-    visibility: hidden;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
+
+.ImgArea .inputfile + label {
+    font-size: 0em;
+    font-weight: 700;
+    color: white;
+    display: inline-block;
+    
+}
+
+/* .ImgArea input::-webkit-file-upload-button {
+    visibility: hidden;
+} */

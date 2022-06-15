@@ -2,7 +2,7 @@
 import style from './Input.module.css';
 
 function Input({
-  placeholder, type, value, disabled, size,
+  placeholder, type, value, disabled, size, handle,
 }) {
   return (
     <div className={`${style.Input} ${style[size]}`}>
@@ -10,7 +10,8 @@ function Input({
         <input
           type={type}
           placeholder={placeholder}
-          value={value}
+          defaultValue={value}
+          onChange={handle}
           disabled
         />
       )}
@@ -19,8 +20,9 @@ function Input({
       <input
         type={type}
         placeholder={placeholder}
-        value={value}
+        defaultValue={value}
         className={`${style[size]}`}
+        onChange={handle}
       />
       )}
 
